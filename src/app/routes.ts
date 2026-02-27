@@ -7,7 +7,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import NotFound from "./components/NotFound";
 
-export const router = createBrowserRouter([
+const routes = [
   {
     path: "/",
     Component: Root,
@@ -20,4 +20,9 @@ export const router = createBrowserRouter([
       { path: "*", Component: NotFound },
     ],
   },
-]);
+];
+
+export const router = createBrowserRouter(routes, {
+  basename: import.meta.env.BASE_URL,
+});
+
